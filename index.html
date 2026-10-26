@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nils Hammond – Game Development</title>
+  <meta name="description" content="Portfolio of Nils Hammond, game development student: games, prototypes and coursework.">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #666666;
+      --line: #dcdcdc;
+      --link: #1a1a1a;
+      --hover: #b3361b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141414;
+        --text: #ececec;
+        --muted: #9a9a9a;
+        --line: #2e2e2e;
+        --link: #ececec;
+        --hover: #ff8a6b;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 56px 20px 80px; }
+    a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    a:hover { color: var(--hover); }
+    h1, h2, h3, nav, .meta {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    h1 { font-size: 1.9rem; margin: 0 0 4px; letter-spacing: -0.01em; }
+    .tagline { margin: 0 0 20px; color: var(--muted); }
+    nav { display: flex; gap: 20px; font-size: .92rem; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    nav a { text-decoration: none; color: var(--muted); }
+    nav a:hover { color: var(--hover); }
+
+    section { padding-top: 40px; }
+    h2 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 20px; font-weight: 600; }
+
+    /* One list for everything: image beside text, thin dividers */
+    .project { display: grid; grid-template-columns: 220px 1fr; gap: 20px; padding: 22px 0; border-top: 1px solid var(--line); }
+    .project:first-of-type { border-top: 0; padding-top: 0; }
+    .project img, .project .placeholder {
+      width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block;
+      background: var(--line); border-radius: 2px;
+    }
+    .project h3 { font-size: 1.1rem; margin: 0 0 2px; }
+    .meta { font-size: .85rem; color: var(--muted); margin: 0 0 8px; }
+    .project p { margin: 0 0 8px; }
+    .project .links { font-size: .95rem; }
+    .project .links a + a { margin-left: 14px; }
+
+    .skills { margin: 0; }
+    .skills dt { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: .85rem; color: var(--muted); margin-top: 10px; }
+    .skills dd { margin: 0; }
+
+    footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+
+    @media (max-width: 560px) {
+      .project { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <h1>Nils Hammond</h1>
+      <p class="tagline">Game development student. Gameplay programming, with an interest in level design. Looking for an internship.</p>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <!-- Copy a whole <article> to add a project. Put your strongest first.
+             Images and GIFs both work in the <img> tag.
+             Delete the links you don't have; delete the whole links line if none. -->
+
+        <article class="project">
+          <img src="images/game-one.gif" alt="Gameplay of Game One" loading="lazy">
+          <div>
+            <h3>Game One</h3>
+            <p class="meta">Game · Unity, C# · Solo · 2026</p>
+            <p>One or two sentences: genre, the core mechanic, and what you built or are proud of.</p>
+            <p class="links"><a href="https://nils-hammond.itch.io/game-one">Play on itch.io</a></p>
+          </div>
+        </article>
+
+        <article class="project">
+          <img src="images/game-two.png" alt="Screenshot of Game Two" loading="lazy">
+          <div>
+            <h3>Game Two</h3>
+            <p class="meta">Game jam · Godot, GDScript · Team of 4</p>
+            <p>The theme, your role on the team, and what you implemented.</p>
+            <p class="links"><a href="#">Play on itch.io</a> <a href="https://github.com/Nils-Hammond/game-two">Source</a></p>
+          </div>
+        </article>
+
+        <article class="project">
+          <img src="images/assignment-one.gif" alt="Demo of the pathfinding assignment" loading="lazy">
+          <div>
+            <h3>Pathfinding demo</h3>
+            <p class="meta">Assignment · Unity, C# · 2 weeks</p>
+            <p>What the brief was and the skill it shows, e.g. A* on a grid with moving obstacles.</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <img src="images/assignment-two.png" alt="Screenshot of the shader assignment" loading="lazy">
+          <div>
+            <h3>Another assignment</h3>
+            <p class="meta">Assignment · Engine, language</p>
+            <p>One or two lines on what it does and what you learned.</p>
+          </div>
+        </article>
+
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <dl class="skills">
+          <dt>Engines</dt><dd>Unity, Godot, Unreal Engine</dd>
+          <dt>Languages</dt><dd>C#, C++, GDScript</dd>
+          <dt>Tools</dt><dd>Git, Perforce, Blender, Aseprite</dd>
+        </dl>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          <a href="mailto:you@example.com">you@example.com</a><br>
+          <a href="https://github.com/Nils-Hammond">GitHub</a> ·
+          <a href="https://nils-hammond.itch.io">itch.io</a> ·
+          <a href="https://www.linkedin.com/in/your-username">LinkedIn</a>
+        </p>
+      </section>
+
+    </main>
+
+    <footer>© 2026 Nils Hammond</footer>
+
+  </div>
+</body>
+</html>
