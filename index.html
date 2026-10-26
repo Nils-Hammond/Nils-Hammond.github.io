@@ -7,6 +7,8 @@
   <meta name="description" content="Portfolio of Nils Hammond, game development student: games, prototypes and coursework.">
   <style>
     :root {
+      --page: #f3f3ef;
+      --grid: rgba(0, 0, 0, .06);
       --bg: #ffffff;
       --text: #1a1a1a;
       --muted: #666666;
@@ -16,6 +18,8 @@
     }
     @media (prefers-color-scheme: dark) {
       :root {
+        --page: #0d0d0d;
+        --grid: rgba(255, 255, 255, .05);
         --bg: #141414;
         --text: #ececec;
         --muted: #9a9a9a;
@@ -27,20 +31,42 @@
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      background: var(--bg);
+      background-color: var(--page);
+      /* Faint graph-paper grid, only visible in the side margins on wide screens */
+      background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 32px 32px;
       color: var(--text);
       font-family: Georgia, "Times New Roman", serif;
       font-size: 1.05rem;
       line-height: 1.65;
     }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 56px 20px 80px; }
+    /* The page content sits on a plain "sheet" over the grid */
+    .wrap {
+      max-width: 780px;
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 56px 40px 80px;
+      background: var(--bg);
+      border-left: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+    }
     a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
     a:hover { color: var(--hover); }
     h1, h2, h3, nav, .meta {
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     }
     h1 { font-size: 1.9rem; margin: 0 0 4px; letter-spacing: -0.01em; }
-    .tagline { margin: 0 0 20px; color: var(--muted); }
+    .tagline { margin: 0; color: var(--muted); }
+
+    /* Intro: image on the left, name and blurb on the right */
+    .intro { display: grid; grid-template-columns: 150px 1fr; gap: 28px; align-items: center; margin-bottom: 28px; }
+    .intro img, .intro .placeholder {
+      width: 150px; height: 150px; object-fit: cover; display: block;
+      background: var(--line); border-radius: 2px;
+    }
+
     nav { display: flex; gap: 20px; font-size: .92rem; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
     nav a { text-decoration: none; color: var(--muted); }
     nav a:hover { color: var(--hover); }
@@ -68,6 +94,9 @@
     footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
 
     @media (max-width: 560px) {
+      .wrap { padding: 40px 20px 64px; border: 0; }
+      .intro { grid-template-columns: 96px 1fr; gap: 16px; }
+      .intro img, .intro .placeholder { width: 96px; height: 96px; }
       .project { grid-template-columns: 1fr; }
     }
   </style>
@@ -76,8 +105,14 @@
   <div class="wrap">
 
     <header>
-      <h1>Nils Hammond</h1>
-      <p class="tagline">Game development student at Howest DAE, with a preference towards coding gameplay and AI systems. Looking for an end of study internship from February 2027 to June 2027.</p>
+      <div class="intro">
+        <!-- Portrait, logo, or pixel-art avatar. Square works best (around 300x300 px). -->
+        <img src="images/MyBeautifulFace.jpg" alt="Nils Hammond">
+        <div>
+          <h1>Nils Hammond</h1>
+          <p class="tagline">Game development student at Howest DAE, with a preference towards coding gameplay and AI systems. Looking for an end of study internship from February 2027 to June 2027.</p>
+        </div>
+      </div>
       <nav>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
@@ -99,7 +134,7 @@
           <div>
             <h3>Fireballin'</h3>
             <p class="meta">Game · Unity, C# · Perforce · Team of 6</p>
-            <p>Chaotic couch multiplayer PvP mage fighting game. Made with a team of 6 people</p>
+            <p>Chaotic couch multiplayer PvP mage fighting game. Made with a team of 6 people.</p>
             <p class="links"><a href="https://thomasvanbogaert.itch.io/fireballin">Play on itch.io</a></p>
           </div>
         </article>
@@ -119,7 +154,7 @@
           <div>
             <h3>Binary Space Partitioning</h3>
             <p class="meta">Assignment · Godot, GDScript</p>
-            <p>A research project on the use of Binary Space Partitioning for generating dungeon layouts. Implemented in Godot</p>
+            <p>A research project on the use of Binary Space Partitioning for generating dungeon layouts. Implemented in Godot.</p>
             <p class="links"><a href="https://github.com/Nils-Hammond/gameai-research-project">Source</a></p>
           </div>
         </article>
